@@ -1,0 +1,49 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Quiz Platform{% endblock %}</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #0059ff, #a6d6ff); /* Dark to light blue gradient */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .dashboard-container {
+            text-align: center;
+        }
+
+        .h2{
+            color: #ffffff;
+        }
+        .btn {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="dashboard-container">
+            <h2 class="text-primary mb-4" style="color:#ffffff;">{% block header %}Health Connect{% endblock %}</h2>
+    
+            <p>Welcome to the Quiz Platform. Please select your role:</p>
+            <a href="custom_register.html" class="btn btn-primary">admin</a>
+            <a href="custom_register.html" class="btn btn-primary">Patient</a>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS (Optional, for Bootstrap components that require JavaScript) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

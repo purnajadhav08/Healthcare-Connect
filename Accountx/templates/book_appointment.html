@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Add any additional head content here -->
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Family Medicine - Patient Information</h1>
+        <form id="appointmentForm">
+            <div class="mb-3">
+                <label for="firstName" class="form-label">First Name *</label>
+                <input type="text" class="form-control" name="firstName" required />
+            </div>
+
+            <!-- Add the rest of the input fields similarly -->
+
+            <div class="mb-3">
+                <label for="birthDate" class="form-label">Birth Date *</label>
+                <input type="date" class="form-control" name="birthDate" required />
+            </div>
+
+            <div class="mb-3">
+                <label for="appointmentDate" class="form-label">Appointment Date *</label>
+                <input type="date" class="form-control" name="appointmentDate" required />
+            </div>
+
+            <div class="mb-3">
+                <label for="appointmentTime" class="form-label">Time *</label>
+                <input type="time" class="form-control" name="appointmentTime" required />
+            </div>
+
+            <div class="mb-3">
+                <label>Preferred Physician</label>
+                <div>
+                    <!-- Radio buttons for selecting preferred physician -->
+                    <input type="radio" class="btn-check" name="preferredPhysician" id="drAnderson" value="Dr. Anderson" />
+                    <label class="btn btn-outline-primary" for="drAnderson">Dr. Anderson</label>
+
+                    <input type="radio" class="btn-check" name="preferredPhysician" id="drJones" value="Dr. Jones" />
+                    <label class="btn btn-outline-primary" for="drJones">Dr. Jones</label>
+
+                    <input type="radio" class="btn-check" name="preferredPhysician" id="drPatel" value="Dr. Patel" />
+                    <label class="btn btn-outline-primary" for="drPatel">Dr. Patel</label>
+
+                    <input type="radio" class="btn-check" name="preferredPhysician" id="drSmith" value="Dr. Smith" />
+                    <label class="btn btn-outline-primary" for="drSmith">Dr. Smith</label>
+
+                    <input type="radio" class="btn-check" name="preferredPhysician" id="noPreference" value="No preference" />
+                    <label class="btn btn-outline-primary" for="noPreference">No preference</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="visitReason" class="form-label">Please describe the reason for this visit *</label>
+                <textarea class="form-control" name="visitReason" rows="3" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <!-- Add your JavaScript here to handle form submission and other interactions -->
+</body>

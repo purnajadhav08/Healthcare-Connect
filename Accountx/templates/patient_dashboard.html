@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Examinee Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0c7091;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+        }
+        .dashboard-container {
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: left;
+            width: 600px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+        .welcome-message {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .logout-link {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="dashboard-container bg-light p-4 rounded shadow">
+            <h2 class="text-primary mb-4">patient Dashboard</h2>
+            <div class="welcome-message">
+                <p>Welcome, {{ patient.username }}!</p>
+                <a href="{% url 'search_suggestions' %}">
+                    <button type="button">Search Hospitals and Specialists</button>
+                </a>
+                <br>
+                <a href="{% url 'book_appointment' %}">
+                    <button type="button">Book appointment</button>
+                </a>
+                <!-- You can customize this message based on your needs -->
+            </div>
+            <p class="logout-link"><a href="{% url 'patient_logout' %}">Logout</a></p>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS (Optional, for Bootstrap components that require JavaScript) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

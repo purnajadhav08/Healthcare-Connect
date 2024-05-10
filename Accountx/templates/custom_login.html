@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #0059ff, #a6d6ff); /* Dark to light blue gradient */
+            margin: 0;
+        }
+        .login-container {
+            width: 400px; /* Adjusted width to match the registration page */
+            padding: 30px; /* Increased padding for more space */
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+        /* Additional styles for consistency */
+        h2 {
+            font-size: 28px; /* Increased font size for the title */
+            margin-bottom: 20px; /* Added margin for separation */
+        }
+        input[type="text"],
+        input[type="password"] {
+            border-radius: 8px; /* Add border radius for input fields */
+            margin-bottom: 15px; /* Added margin for separation */
+            width: 100%; /* Make the input fields full width */
+            padding: 12px; /* Added padding for better appearance */
+            box-sizing: border-box; /* Ensure padding and border are included in width */
+        }
+        .btn {
+            border-radius: 12px; /* Add border radius for buttons */
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2 class="mb-4">Login</h2>
+    <form action="{% url 'custom_login' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+        <select name="user_type">
+            <option value="admin">Admin</option>
+            <option value="patient">Patient</option>
+        </select>
+        <button type="submit">Login</button>
+    </form>
+
+    {% if user.is_authenticated %}
+        {% if user.is_admin %}
+            <p>User type: Admin</p>
+        {% elif user.is_patient %}
+            <p>User type: Patient</p>
+        {% else %}
+            <p>User type: Unknown</p>
+        {% endif %}
+    {% endif %}
+</div>
+
+</body>
+</html>
